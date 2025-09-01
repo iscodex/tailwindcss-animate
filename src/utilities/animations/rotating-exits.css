@@ -1,0 +1,95 @@
+@theme default {
+  --animate-rotate-out: rotate-out var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-out-down-start: rotate-out-down-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-out-down-end: rotate-out-down-end
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-out-up-start: rotate-out-up-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-out-up-end: rotate-out-up-end
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes rotate-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 200deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotate-out-down-start {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotate-out-down-end {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: rotate3d(0, 0, 1, -45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotate-out-up-start {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: rotate3d(0, 0, 1, -45deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rotate-out-up-end {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: rotate3d(0, 0, 1, 45deg);
+      opacity: 0;
+    }
+  }
+}
+
+@utility animate-rotate-out {
+  transform-origin: center;
+}
+
+@utility animate-rotate-out-down-start {
+  transform-origin: left bottom;
+}
+
+@utility animate-rotate-out-down-end {
+  transform-origin: right bottom;
+}
+
+@utility animate-rotate-out-up-start {
+  transform-origin: left bottom;
+}
+
+@utility animate-rotate-out-up-end {
+  transform-origin: right bottom;
+}

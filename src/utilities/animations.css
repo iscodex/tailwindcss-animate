@@ -9,4 +9,6 @@
 @import "./animations/fading-entrances.css";
 @import "./animations/fading-exits.css";
 @import "./animations/flippers.css";
+@import "./animations/rotating-entrances.css";
+@import "./animations/rotating-exits.css";
 @import "./animations/specials.css";

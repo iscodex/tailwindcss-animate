@@ -1,0 +1,100 @@
+@theme default {
+  --animate-rotate-in: rotate-in var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-in)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-in-down-start: rotate-in-down-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-in)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-in-down-end: rotate-in-down-end
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-in)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-in-up-start: rotate-in-up-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-in)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-rotate-in-up-end: rotate-in-up-end
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-in)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes rotate-in {
+    from {
+      transform: rotate3d(0, 0, 1, -200deg);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-in-down-start {
+    from {
+      transform: rotate3d(0, 0, 1, -45deg);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-in-down-end {
+    from {
+      transform: rotate3d(0, 0, 1, 45deg);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-in-up-start {
+    from {
+      transform: rotate3d(0, 0, 1, 45deg);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate-in-up-end {
+    from {
+      transform: rotate3d(0, 0, 1, -45deg);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+}
+
+@utility animate-rotate-in {
+  transform-origin: center;
+}
+
+@utility animate-rotate-in-down-start {
+  transform-origin: left bottom;
+}
+
+@utility animate-rotate-in-down-end {
+  transform-origin: right bottom;
+}
+
+@utility animate-rotate-in-up-start {
+  transform-origin: left bottom;
+}
+
+@utility animate-rotate-in-up-end {
+  transform-origin: right bottom;
+}
