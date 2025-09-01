@@ -11,4 +11,6 @@
 @import "./animations/flippers.css";
 @import "./animations/rotating-entrances.css";
 @import "./animations/rotating-exits.css";
+@import "./animations/sliding-entrances.css";
+@import "./animations/sliding-exits.css";
 @import "./animations/specials.css";

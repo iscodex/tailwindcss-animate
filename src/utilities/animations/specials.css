@@ -39,20 +39,16 @@
     from {
       opacity: 0;
       transform: scale(0.1) rotate(30deg);
-      transform-origin: center bottom;
     }
     50% {
       transform: rotate(-10deg);
-      transform-origin: center bottom;
     }
     70% {
       transform: rotate(3deg);
-      transform-origin: center bottom;
     }
     to {
       opacity: 1;
       transform: scale(1);
-      transform-origin: center bottom;
     }
   }
 
@@ -60,20 +56,16 @@
     from {
       opacity: 1;
       transform: scale(1);
-      transform-origin: center bottom;
     }
     30% {
       transform: rotate(-3deg);
-      transform-origin: center bottom;
     }
     50% {
       transform: rotate(10deg);
-      transform-origin: center bottom;
     }
     to {
       opacity: 0;
       transform: scale(0.1) rotate(30deg);
-      transform-origin: center bottom;
     }
   }
 
@@ -101,4 +93,12 @@
 
 @utility animate-hinge {
   transform-origin: top left;
+}
+
+@utility animate-jack-in {
+  transform-origin: center bottom;
+}
+
+@utility animate-jack-out {
+  transform-origin: center bottom;
 }
