@@ -1,0 +1,126 @@
+@theme default {
+  --animate-bounce-in: bounce-in var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-in-down: bounce-in-down var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-in-start: bounce-in-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-in-end: bounce-in-end var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-in-up: bounce-in-up var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+      opacity: 1;
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+      transform: scale3d(0.97, 0.97, 0.97);
+    }
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes bounce-in-down {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, -3000px, 0) scaleY(3);
+    }
+    60% {
+      opacity: 1;
+      transform: translate3d(0, 25px, 0) scaleY(0.9);
+    }
+    75% {
+      transform: translate3d(0, -10px, 0) scaleY(0.95);
+    }
+    90% {
+      transform: translate3d(0, 5px, 0) scaleY(0.985);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes bounce-in-start {
+    0% {
+      opacity: 0;
+      transform: translate3d(-3000px, 0, 0) scaleX(3);
+    }
+    60% {
+      opacity: 1;
+      transform: translate3d(25px, 0, 0) scaleX(1);
+    }
+    75% {
+      transform: translate3d(-10px, 0, 0) scaleX(0.98);
+    }
+    90% {
+      transform: translate3d(5px, 0, 0) scaleX(0.995);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes bounce-in-end {
+    from {
+      opacity: 0;
+      transform: translate3d(3000px, 0, 0) scaleX(3);
+    }
+    60% {
+      opacity: 1;
+      transform: translate3d(-25px, 0, 0) scaleX(1);
+    }
+    75% {
+      transform: translate3d(10px, 0, 0) scaleX(0.98);
+    }
+    90% {
+      transform: translate3d(-5px, 0, 0) scaleX(0.995);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes bounce-in-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 3000px, 0) scaleY(5);
+    }
+    60% {
+      opacity: 1;
+      transform: translate3d(0, -20px, 0) scaleY(0.9);
+    }
+    75% {
+      transform: translate3d(0, 10px, 0) scaleY(0.95);
+    }
+    90% {
+      transform: translate3d(0, -5px, 0) scaleY(0.985);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

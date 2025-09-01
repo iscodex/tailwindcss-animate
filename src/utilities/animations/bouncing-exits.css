@@ -1,0 +1,90 @@
+@theme default {
+  --animate-bounce-out: bounce-out var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-out-down: bounce-out-down
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-out-start: bounce-out-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-out-end: bounce-out-end var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-bounce-out-up: bounce-out-up var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes bounce-out {
+    20% {
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+    50%,
+    55% {
+      opacity: 1;
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+    to {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  }
+
+  @keyframes bounce-out-down {
+    20% {
+      transform: translate3d(0, 10px, 0) scaleY(0.985);
+    }
+    40%,
+    45% {
+      opacity: 1;
+      transform: translate3d(0, -20px, 0) scaleY(0.9);
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(0, 2000px, 0) scaleY(3);
+    }
+  }
+
+  @keyframes bounce-out-start {
+    20% {
+      opacity: 1;
+      transform: translate3d(20px, 0, 0) scaleX(0.9);
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(-2000px, 0, 0) scaleX(2);
+    }
+  }
+
+  @keyframes bounce-out-end {
+    20% {
+      opacity: 1;
+      transform: translate3d(-20px, 0, 0) scaleX(0.9);
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0) scaleX(2);
+    }
+  }
+
+  @keyframes bounce-out-up {
+    20% {
+      transform: translate3d(0, -10px, 0) scaleY(0.985);
+    }
+    40%,
+    45% {
+      opacity: 1;
+      transform: translate3d(0, 20px, 0) scaleY(0.9);
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(0, -2000px, 0) scaleY(3);
+    }
+  }
+}

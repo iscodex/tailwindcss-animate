@@ -1,0 +1,17 @@
+@theme default {
+  --animate-spin: spin var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, linear)
+    var(--default-animation-delay, 0s) infinite;
+
+  --animate-ping: ping var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, cubic-bezier(0, 0, 0.2, 1))
+    var(--default-animation-delay, 0s) infinite;
+
+  --animate-pulse: pulse var(--default-animation-duration, 2s)
+    var(--default-animation-timing-function, cubic-bezier(0.4, 0, 0.6, 1))
+    var(--default-animation-delay, 0s) infinite;
+
+  --animate-bounce: bounce var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) infinite;
+}

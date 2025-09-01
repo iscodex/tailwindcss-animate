@@ -1,28 +1,10 @@
-@theme default {
-  --animate-spin: spin var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, linear)
-    var(--default-animation-delay, 0s) infinite;
-  --animate-ping: ping var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, cubic-bezier(0, 0, 0.2, 1))
-    var(--default-animation-delay, 0s) infinite;
-  --animate-pulse: pulse var(--default-animation-duration, 2s)
-    var(--default-animation-timing-function, cubic-bezier(0.4, 0, 0.6, 1))
-    var(--default-animation-delay, 0s) infinite;
-  --animate-bounce: bounce var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
-    var(--default-animation-delay, 0s) infinite;
+@import "./animations/default.css";
 
-  --animate-wiggle: wiggle var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
-    var(--default-animation-delay, 0s) both;
-
-  @keyframes wiggle {
-    0%,
-    100% {
-      transform: rotate(-3deg);
-    }
-    50% {
-      transform: rotate(3deg);
-    }
-  }
-}
+@import "./animations/attention-seekers.css";
+@import "./animations/back-entrances.css";
+@import "./animations/back-exits.css";
+@import "./animations/bouncing-entrances.css";
+@import "./animations/bouncing-exits.css";
+@import "./animations/fading-entrances.css";
+@import "./animations/fading-exits.css";
+@import "./animations/flippers.css";

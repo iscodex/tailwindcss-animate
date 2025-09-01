@@ -1,0 +1,74 @@
+@theme default {
+  --animate-fade-in: fade-in var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-fade-in-down: fade-in-down var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-fade-in-start: fade-in-start var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-fade-in-end: fade-in-end var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-fade-in-up: fade-in-up var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-down {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fade-in-start {
+    from {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fade-in-end {
+    from {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
