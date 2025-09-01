@@ -1,7 +1,14 @@
-import tailwindPackage from "tailwindcss/package.json";
+function getTailwindVersion(): string {
+  try {
+    return require("tailwindcss/package.json").version;
+  } catch {
+    return "3.0.0"; // fallback
+  }
+}
 
 function isLegacyTailwind(): boolean {
-  return tailwindPackage.version?.startsWith("3.") ?? false;
+  const version = getTailwindVersion();
+  return version.startsWith("3.");
 }
 
 function isPositiveInteger(value: string | number): boolean {

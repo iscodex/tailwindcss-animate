@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { getBareMilliseconds, getBareIntegers } from "./helper/bare-values";
+import { getBareMilliseconds, getBareIntegers } from "./helpers/bare-values";
 
 const bareMilliseconds = getBareMilliseconds();
 const bareIntegers = getBareIntegers();

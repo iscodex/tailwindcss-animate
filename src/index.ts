@@ -13,16 +13,16 @@ import theme from "./plugins/theme";
 
 export default plugin(
   (api) => {
-    composition.handler(api);
-    delay.handler(api);
-    direction.handler(api);
-    duration.handler(api);
-    fillMode.handler(api);
-    iterationCount.handler(api);
-    playState.handler(api);
-    timingFunction.handler(api);
+    [
+      composition,
+      delay,
+      direction,
+      duration,
+      fillMode,
+      iterationCount,
+      playState,
+      timingFunction,
+    ].forEach((plugin) => plugin.handler(api));
   },
-  {
-    theme,
-  }
+  { theme }
 );
