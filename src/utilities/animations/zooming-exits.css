@@ -1,0 +1,78 @@
+@theme default {
+  --animate-zoom-out: zoom-out var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-zoom-out-down: zoom-out-down var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-zoom-out-up: zoom-out-up var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-zoom-out-start: zoom-out-start var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-zoom-out-end: zoom-out-end var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease-out)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes zoom-out {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoom-out-down {
+    40% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+    }
+    to {
+      opacity: 0;
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 2000px, 0);
+    }
+  }
+
+  @keyframes zoom-out-up {
+    40% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    }
+    to {
+      opacity: 0;
+      transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+    }
+  }
+
+  @keyframes zoom-out-start {
+    40% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(42px, 0, 0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.1) translate3d(-2000px, 0, 0);
+    }
+  }
+
+  @keyframes zoom-out-end {
+    40% {
+      opacity: 1;
+      transform: scale3d(0.475, 0.475, 0.475) translate3d(-42px, 0, 0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.1) translate3d(2000px, 0, 0);
+    }
+  }
+}
