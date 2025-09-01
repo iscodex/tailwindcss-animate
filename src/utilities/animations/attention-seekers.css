@@ -11,7 +11,7 @@
     var(--default-animation-timing-function, ease)
     var(--default-animation-delay, 0s) both;
 
-  --animate-jello: jello var(--default-animation-duration, 1s)
+  --animate-jelly: jelly var(--default-animation-duration, 1s)
     var(--default-animation-timing-function, ease)
     var(--default-animation-delay, 0s) both;
 
@@ -94,7 +94,7 @@
     }
   }
 
-  @keyframes jello {
+  @keyframes jelly {
     from,
     11.1%,
     to {
