@@ -1,18 +1,18 @@
 @theme default {
   --animate-back-in-down: back-in-down var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-back-in-start: back-in-start var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-back-in-end: back-in-end var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-back-in-up: back-in-up var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   @keyframes back-in-down {

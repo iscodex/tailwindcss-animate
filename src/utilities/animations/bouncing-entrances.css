@@ -1,23 +1,23 @@
 @theme default {
   --animate-bounce-in: bounce-in var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-in-down: bounce-in-down var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-in-start: bounce-in-start
     var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-in-end: bounce-in-end var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-in-up: bounce-in-up var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   @keyframes bounce-in {

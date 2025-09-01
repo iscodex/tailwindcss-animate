@@ -1,18 +1,18 @@
 @theme default {
   --animate-back-out-down: back-out-down var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-back-out-start: back-out-start var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-back-out-end: back-out-end var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-back-out-up: back-out-up var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   @keyframes back-out-down {

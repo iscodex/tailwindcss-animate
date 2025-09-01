@@ -4,11 +4,11 @@
     var(--default-animation-delay, 0s) both;
 
   --animate-head-shake: head-shake var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in-out)
     var(--default-animation-delay, 0s) both;
 
-  --animate-heart-beat: heart-beat var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+  --animate-heart-beat: heart-beat var(--default-animation-duration, 1.3s)
+    var(--default-animation-timing-function, ease-in-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-jelly: jelly var(--default-animation-duration, 1s)
@@ -262,4 +262,12 @@
       transform: translate3d(0, 0, 0);
     }
   }
+}
+
+@utility animate-jelly {
+  transform-origin: center;
+}
+
+@utility animate-swing {
+  transform-origin: top center;
 }

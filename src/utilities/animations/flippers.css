@@ -1,22 +1,22 @@
 @theme default {
   --animate-flip: flip var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-flip-in-x: flip-in-x var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
   --animate-flip-in-y: flip-in-y var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-in)
     var(--default-animation-delay, 0s) both;
 
-  --animate-flip-out-x: flip-out-x var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+  --animate-flip-out-x: flip-out-x var(--default-animation-duration, 0.75s)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
-  --animate-flip-out-y: flip-out-y var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+  --animate-flip-out-y: flip-out-y var(--default-animation-duration, 0.75s)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   @keyframes flip {
@@ -109,4 +109,24 @@
       opacity: 0;
     }
   }
+}
+
+@utility animate-flip {
+  backface-visibility: visible;
+}
+
+@utility animate-flip-in-x {
+  backface-visibility: visible;
+}
+
+@utility animate-flip-in-y {
+  backface-visibility: visible;
+}
+
+@utility animate-flip-out-x {
+  backface-visibility: visible;
+}
+
+@utility animate-flip-out-y {
+  backface-visibility: visible;
 }

@@ -1,24 +1,24 @@
 @theme default {
   --animate-bounce-out: bounce-out var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-out-down: bounce-out-down
     var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-out-start: bounce-out-start
     var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-out-end: bounce-out-end var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-bounce-out-up: bounce-out-up var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   @keyframes bounce-out {

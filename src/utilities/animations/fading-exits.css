@@ -1,22 +1,22 @@
 @theme default {
   --animate-fade-out: fade-out var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-fade-out-down: fade-out-down var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-fade-out-start: fade-out-start var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-fade-out-end: fade-out-end var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   --animate-fade-out-up: fade-out-up var(--default-animation-duration, 1s)
-    var(--default-animation-timing-function, ease)
+    var(--default-animation-timing-function, ease-out)
     var(--default-animation-delay, 0s) both;
 
   @keyframes fade-out {

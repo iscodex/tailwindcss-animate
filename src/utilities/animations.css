@@ -3,10 +3,10 @@
 @import "./animations/attention-seekers.css";
 @import "./animations/back-entrances.css";
 @import "./animations/back-exits.css";
+@import "./animations/dashing.css";
 @import "./animations/bouncing-entrances.css";
 @import "./animations/bouncing-exits.css";
 @import "./animations/fading-entrances.css";
 @import "./animations/fading-exits.css";
 @import "./animations/flippers.css";
-@import "./animations/light-speed.css";
 @import "./animations/specials.css";
