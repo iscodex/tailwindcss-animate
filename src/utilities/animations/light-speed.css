@@ -1,0 +1,75 @@
+@theme default {
+  --animate-light-speed-in-start: light-speed-in-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-light-speed-in-end: light-speed-in-end
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-light-speed-out-start: light-speed-out-start
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  --animate-light-speed-out-end: light-speed-out-end
+    var(--default-animation-duration, 1s)
+    var(--default-animation-timing-function, ease)
+    var(--default-animation-delay, 0s) both;
+
+  @keyframes light-speed-in-start {
+    from {
+      transform: translate3d(-100%, 0, 0) skewX(30deg);
+      opacity: 0;
+    }
+    60% {
+      transform: skewX(-20deg);
+      opacity: 1;
+    }
+    80% {
+      transform: skewX(5deg);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes light-speed-in-end {
+    from {
+      transform: translate3d(100%, 0, 0) skewX(-30deg);
+      opacity: 0;
+    }
+    60% {
+      transform: skewX(20deg);
+      opacity: 1;
+    }
+    80% {
+      transform: skewX(-5deg);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes light-speed-out-start {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: translate3d(-100%, 0, 0) skewX(-30deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes light-speed-out-end {
+    from {
+      opacity: 1;
+    }
+    to {
+      transform: translate3d(100%, 0, 0) skewX(30deg);
+      opacity: 0;
+    }
+  }
+}
