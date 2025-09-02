@@ -21,37 +21,37 @@ export default function Home() {
     <Fragment>
       <Navbar />
       <main>
-        <section className="relative min-h-[65dvh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 dots-pattern opacity-70"></div>
+        <section className="relative flex min-h-[65dvh] items-center justify-center overflow-hidden">
+          <div className="dots-pattern absolute inset-0 opacity-70"></div>
 
           <Particles />
 
-          <div className="relative text-center max-w-5xl mx-auto px-6">
+          <div className="relative mx-auto max-w-5xl px-6 text-center">
             <div className="animate-fade-in animate-delay-none">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight bg-gradient-to-b from-cyan-500 to-pink-500 bg-clip-text text-transparent">
+              <h1 className="mb-6 bg-gradient-to-b from-cyan-500 to-pink-500 bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-7xl">
                 Tailwind CSS
                 <span className="block">Animate</span>
               </h1>
             </div>
 
             <div className="animate-fade-in animate-delay-[0.1s]">
-              <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+              <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
                 Extended animation utilities for Tailwind CSS v4.
                 <span className="text-gray-300">Zero configuration</span>, ready
                 to use.
               </p>
             </div>
 
-            <div className="animate-fade-in animate-delay-[0.15s] flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="animate-fade-in animate-delay-[0.15s] flex flex-col justify-center gap-4 sm:flex-row">
               <NavLink
                 to="#installation"
-                className="bg-gray-200 text-gray-950 px-8 py-3 rounded-lg font-medium hover:bg-white transition-all duration-200"
+                className="rounded-lg bg-gray-200 px-8 py-3 font-medium text-gray-950 transition-all duration-200 hover:bg-white"
               >
                 Get Started
               </NavLink>
               <NavLink
                 to="/configurator"
-                className="border border-gray-700 text-gray-300 px-8 py-3 rounded-lg font-medium hover:bg-gray-900 hover:border-gray-600 transition-all duration-200"
+                className="rounded-lg border border-gray-700 px-8 py-3 font-medium text-gray-300 transition-all duration-200 hover:border-gray-600 hover:bg-gray-900"
               >
                 Try Configurator
               </NavLink>
@@ -59,36 +59,36 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="installation" className="py-20 bg-gray-900/50">
-          <div className="max-w-4xl mx-auto px-6">
-            <div className="animate-fade-in-up text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-4">
+        <section id="installation" className="bg-gray-900/50 py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="animate-fade-in-up mb-12 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-200 md:text-4xl">
                 Quick Installation
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-lg text-gray-400">
                 Get started with tailwindcss-animate in seconds
               </p>
             </div>
 
-            <div className="animate-fade-in-up space-y-6">
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <div className="flex items-center mb-3">
-                  <span className="w-6 h-6 bg-pink-500 text-white text-sm font-bold rounded-full flex items-center justify-center mr-3">
+            <div className="space-y-6">
+              <div className="animate-fade-in-up animate-delay-[400ms] rounded-xl border border-gray-800 bg-gray-900 p-6">
+                <div className="mb-3 flex items-center">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white">
                     1
                   </span>
-                  <h3 className="text-white font-semibold">
+                  <h3 className="font-semibold text-white">
                     Install the package
                   </h3>
                 </div>
                 <BlockCode lang="bash">{`npm install @iscodex/tailwindcss-animate`}</BlockCode>
               </div>
 
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <div className="flex items-center mb-3">
-                  <span className="w-6 h-6 bg-pink-500 text-white text-sm font-bold rounded-full flex items-center justify-center mr-3">
+              <div className="animate-fade-in-up animate-delay-[500ms] rounded-xl border border-gray-800 bg-gray-900 p-6">
+                <div className="mb-3 flex items-center">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white">
                     2
                   </span>
-                  <h3 className="text-white font-semibold">
+                  <h3 className="font-semibold text-white">
                     Import in your CSS
                   </h3>
                 </div>
@@ -100,19 +100,19 @@ export default function Home() {
                 </BlockCode>
               </div>
 
-              <div className="bg-gray-900 rounded-xl p-6 border border-gray-800">
-                <div className="flex items-center mb-3">
-                  <span className="w-6 h-6 bg-pink-500 text-white text-sm font-bold rounded-full flex items-center justify-center mr-3">
+              <div className="animate-fade-in-up animate-delay-[600ms] rounded-xl border border-gray-800 bg-gray-900 p-6">
+                <div className="mb-3 flex items-center">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white">
                     3
                   </span>
-                  <h3 className="text-white font-semibold">Start animating</h3>
+                  <h3 className="font-semibold text-white">Start animating</h3>
                 </div>
                 <BlockCode lang="html">
                   {`<div className="animate-wiggle animate-infinite">Hello World</div>`}
                 </BlockCode>
 
-                <div className="flex justify-center mt-4">
-                  <div className="bg-gradient-to-r from-cyan-500 to-cyan-600 text-white px-6 py-3 rounded-lg animate-wiggle animate-infinite">
+                <div className="mt-4 flex justify-center">
+                  <div className="animate-wiggle animate-infinite rounded-lg bg-gradient-to-r from-cyan-500 to-cyan-600 px-6 py-3 text-white">
                     Hello World
                   </div>
                 </div>
@@ -122,60 +122,60 @@ export default function Home() {
         </section>
 
         <section id="examples" className="py-20">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-200 mb-4">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="animate-fade-in-up mb-16 text-center">
+              <h2 className="mb-4 text-3xl font-bold text-gray-200 md:text-4xl">
                 Animation Examples
               </h2>
-              <p className="text-gray-400 text-lg">
+              <p className="text-lg text-gray-400">
                 See the animations in action
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 text-center">
-                <div className="w-16 h-16 bg-gray-700 rounded-xl mx-auto mb-6 animate-swing animate-infinite flex items-center justify-center">
-                  <div className="w-6 h-6 bg-gray-400 rounded-md"></div>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="animate-fade-in-up animate-delay-[400ms] rounded-xl border border-gray-800 bg-gray-900 p-8 text-center">
+                <div className="animate-swing animate-infinite mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gray-700">
+                  <div className="h-6 w-6 rounded-md bg-gray-400"></div>
                 </div>
 
-                <h3 className="text-gray-200 font-semibold mb-2">Swing</h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <h3 className="mb-2 font-semibold text-gray-200">Swing</h3>
+                <p className="mb-4 text-sm text-gray-400">
                   Playful swing motion
                 </p>
                 <BlockCode lang="css">{`animate-swing`}</BlockCode>
               </div>
 
-              <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 text-center">
-                <div className="w-16 h-16 bg-gray-700 rounded-xl mx-auto mb-6 animate-heart-beat animate-infinite flex items-center justify-center">
-                  <div className="w-6 h-6 bg-gray-400 rounded-md"></div>
+              <div className="animate-fade-in-up animate-delay-[500ms] rounded-xl border border-gray-800 bg-gray-900 p-8 text-center">
+                <div className="animate-heart-beat animate-infinite mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gray-700">
+                  <div className="h-6 w-6 rounded-md bg-gray-400"></div>
                 </div>
-                <h3 className="text-gray-200 font-semibold mb-2">Heart beat</h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <h3 className="mb-2 font-semibold text-gray-200">Heart beat</h3>
+                <p className="mb-4 text-sm text-gray-400">
                   Playful heart beat motion
                 </p>
                 <BlockCode lang="css">{`animate-heart-beat`}</BlockCode>
               </div>
 
-              <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 text-center">
-                <div className="w-16 h-16 bg-gray-700 rounded-xl mx-auto mb-6 animate-wobble animate-infinite flex items-center justify-center">
-                  <div className="w-6 h-6 bg-gray-400 rounded-md"></div>
+              <div className="animate-fade-in-up animate-delay-[600ms] rounded-xl border border-gray-800 bg-gray-900 p-8 text-center">
+                <div className="animate-wobble animate-infinite mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gray-700">
+                  <div className="h-6 w-6 rounded-md bg-gray-400"></div>
                 </div>
-                <h3 className="text-gray-200 font-semibold mb-2">Wobble</h3>
-                <p className="text-gray-400 text-sm mb-4">
+                <h3 className="mb-2 font-semibold text-gray-200">Wobble</h3>
+                <p className="mb-4 text-sm text-gray-400">
                   Playful wobble motion
                 </p>
                 <BlockCode lang="css">{`animate-wobble`}</BlockCode>
               </div>
             </div>
 
-            <div className="text-center mt-12">
+            <div className="animate-fade-in-up mt-12 text-center">
               <a
                 href="/configurator"
-                className="group/link inline-flex items-center space-x-2 text-gray-300 hover:text-gray-200 transition-colors"
+                className="group/link inline-flex items-center space-x-2 text-gray-300 transition-colors hover:text-gray-200"
               >
                 <span>Try configurator</span>
                 <svg
-                  className="w-4 h-4 group-hover/link:translate-x-1 transition-transform"
+                  className="h-4 w-4 transition-transform group-hover/link:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

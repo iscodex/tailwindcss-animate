@@ -10,10 +10,12 @@ import { Input } from "~/components/input";
 import { BlockCode } from "~/components/block-code";
 import { useState } from "react";
 import { useAnimControl } from "~/hooks/use-anim-control";
+import { useMediaQuery } from "~/hooks/use-media-query";
+import { ScreenSizeBlocker } from "~/components/screen-size-blocker";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Tailwind CSS Animate" },
+    { title: "Configurator - Tailwind CSS Animate" },
     {
       name: "description",
       content: "Extended animation utilities for Tailwind CSS v4",
@@ -23,6 +25,8 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Configurator() {
   const navigate = useNavigate();
+
+  const isMobile = useMediaQuery("(width <= 64rem)");
 
   const { key, replay } = useAnimControl();
 
@@ -95,16 +99,18 @@ export default function Configurator() {
     .filter(Boolean)
     .join("\n");
 
+  if (isMobile) return <ScreenSizeBlocker />;
+
   return (
     <Fragment>
       <Navbar className="max-w-full" />
-      <main className="grid grid-cols-[auto_1fr_auto] grid-rows-1 min-h-dvh pt-16">
+      <main className="grid min-h-dvh grid-cols-[auto_1fr_auto] grid-rows-1 pt-16">
         <Sidebar>
           <div className="mb-8 px-6">
-            <h1 className="text-gray-200 font-semibold text-lg mb-2">
+            <h1 className="mb-2 text-lg font-semibold text-gray-200">
               Animations
             </h1>
-            <p className="text-gray-400 text-sm">
+            <p className="text-sm text-gray-400">
               Select an animation to explore
             </p>
           </div>
@@ -113,7 +119,7 @@ export default function Configurator() {
               <div key={i} className="space-y-2">
                 <div className="flex items-center justify-between space-x-4 px-4">
                   <h2 className="font-semibold">{group.name}</h2>
-                  <span className="w-6 h-6 bg-pink-500 text-white text-xs font-medium rounded-full flex items-center justify-center">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-xs font-medium text-white">
                     {group.children.length}
                   </span>
                 </div>
@@ -128,29 +134,29 @@ export default function Configurator() {
                       <button
                         onClick={() => handleAnim("animation", anim.class)}
                         className={cn(
-                          "rounded-lg p-4 cursor-pointer transition-all flex items-center space-x-3 w-full",
+                          "flex w-full cursor-pointer items-center space-x-3 rounded-lg p-4 transition-all",
                           isActive
-                            ? "bg-gray-800 border border-gray-700 shadow-lg"
-                            : "border border-transparent hover:bg-gray-800/50 hover:border-gray-700/50",
+                            ? "border border-gray-700 bg-gray-800 shadow-lg"
+                            : "border border-transparent hover:border-gray-700/50 hover:bg-gray-800/50",
                         )}
                       >
                         <div
                           className={cn(
-                            "w-8 h-8 rounded-lg flex items-center justify-center transition-colors",
+                            "flex h-8 w-8 items-center justify-center rounded-lg transition-colors",
                             isActive
-                              ? "bg-gray-600 border border-gray-500"
+                              ? "border border-gray-500 bg-gray-600"
                               : "bg-gray-700",
                           )}
                         />
 
                         <div className="flex-1 text-start">
-                          <span className="font-medium text-gray-200 text-sm">
+                          <span className="text-sm font-medium text-gray-200">
                             {anim.name}
                           </span>
                         </div>
 
                         {isActive && (
-                          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                          <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
                         )}
                       </button>
 
@@ -164,13 +170,13 @@ export default function Configurator() {
             ))}
           </div>
         </Sidebar>
-        <div className="relative p-16 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 dots-pattern opacity-70" />
+        <div className="relative flex items-center justify-center overflow-hidden p-16">
+          <div className="dots-pattern absolute inset-0 opacity-70" />
           <div className="z-10 space-y-6">
             <div
               key={key}
               className={cn(
-                "rounded-xl w-40 h-40 bg-gradient-to-r from-cyan-400 to-cyan-600",
+                "h-40 w-40 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-600",
                 values.animation,
                 values.count && `animate-${values.count}`,
                 values.duration && `animate-duration-${values.duration}`,
@@ -183,7 +189,7 @@ export default function Configurator() {
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
               <button
                 onClick={replay}
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors"
+                className="cursor-pointer rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-600"
               >
                 Replay Animation
               </button>
@@ -192,19 +198,19 @@ export default function Configurator() {
         </div>
         <Sidebar position="end" className="w-90">
           <div className="mb-8 px-6">
-            <h1 className="text-gray-200 font-semibold text-lg mb-2">
+            <h1 className="mb-2 text-lg font-semibold text-gray-200">
               Utilities
             </h1>
-            <p className="text-gray-400 text-sm">
+            <p className="text-sm text-gray-400">
               Select an animation to explore
             </p>
           </div>
-          <div className="space-y-8 px-2 mb-8">
+          <div className="mb-8 space-y-8 px-2">
             <div className="space-y-2">
               <div className="flex items-center justify-between space-x-4 px-4">
                 <h2 className="font-semibold">Timing</h2>
                 <button
-                  className="text-pink-300 text-xs font-medium hover:text-pink-500 transition-colors"
+                  className="text-xs font-medium text-pink-300 transition-colors hover:text-pink-500"
                   onClick={handleResetAnim}
                 >
                   Reset all properties
@@ -231,7 +237,7 @@ export default function Configurator() {
                       value={values.duration ?? ""}
                       onChange={(e) => handleAnim("duration", e.target.value)}
                     />
-                    <span className="font-bold text-white border border-gray-800 bg-gray-800 rounded-sm text-xs py-1 px-2 absolute top-1.25 right-1">
+                    <span className="absolute top-1.25 right-1 rounded-sm border border-gray-800 bg-gray-800 px-2 py-1 text-xs font-bold text-white">
                       ms
                     </span>
                   </div>
@@ -243,7 +249,7 @@ export default function Configurator() {
                       value={values.delay ?? ""}
                       onChange={(e) => handleAnim("delay", e.target.value)}
                     />
-                    <span className="font-bold text-white border border-gray-800 bg-gray-800 rounded-sm text-xs py-1 px-2 absolute top-1.25 right-1">
+                    <span className="absolute top-1.25 right-1 rounded-sm border border-gray-800 bg-gray-800 px-2 py-1 text-xs font-bold text-white">
                       ms
                     </span>
                   </div>
@@ -313,10 +319,10 @@ export default function Configurator() {
 
           <div className="p-6">
             <BlockCode lang="css">{generatedClasses}</BlockCode>
-            <div className="grid grid-cols-2 space-x-4 mt-4">
+            <div className="mt-4 grid grid-cols-2 space-x-4">
               <button
                 type="button"
-                className="px-4 py-2 bg-pink-700 hover:bg-pink-600 rounded-lg text-sm font-medium transition-colors cursor-pointer"
+                className="cursor-pointer rounded-lg bg-pink-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-pink-600"
               >
                 Copy classes
               </button>
@@ -325,7 +331,7 @@ export default function Configurator() {
                 onClick={() => {
                   navigator.clipboard.writeText(window.location.href);
                 }}
-                className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors cursor-pointer"
+                className="cursor-pointer rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-600"
               >
                 Copy link
               </button>

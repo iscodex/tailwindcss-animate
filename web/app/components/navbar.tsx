@@ -1,19 +1,13 @@
 import { NavLink } from "react-router";
 import { cn } from "~/lib/cn";
+import { Logo } from "./logo";
 
 export const Navbar = ({ className }: { className?: string }) => {
   return (
     <nav className="fixed top-0 w-full bg-gray-900/50 backdrop-blur-sm z-50 border-b border-gray-800/50 h-16">
       <div className={cn("max-w-6xl mx-auto px-6 py-4", className)}>
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center border border-gray-700 animate-tada">
-              <div className="w-3 h-3 bg-gray-400 rounded-sm" />
-            </div>
-            <span className="text-gray-200 font-semibold text-lg">
-              tailwindcss-animate
-            </span>
-          </div>
+          <Logo />
           <div className="hidden md:flex items-center space-x-8">
             <NavLink
               to="/#installation"

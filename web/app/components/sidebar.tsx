@@ -16,7 +16,7 @@ export const Sidebar = ({
       <div className="absolute inset-0">
         <aside
           className={cn(
-            "bg-gray-900/50  border-gray-800/50 sticky top-0 overflow-y-auto h-full max-h-dvh",
+            "sticky top-0 h-full max-h-dvh overflow-y-auto border-gray-800/50 bg-gray-900/50",
             position === "start" ? "left-0 border-r" : "right-0 border-l",
           )}
         >
