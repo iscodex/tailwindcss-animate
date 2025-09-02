@@ -1,4 +1,5 @@
 import { cn } from "~/lib/cn";
+import { ScrollArea } from "./scroll-area";
 
 interface SidebarProps {
   children?: React.ReactNode;
@@ -16,11 +17,13 @@ export const Sidebar = ({
       <div className="absolute inset-0">
         <aside
           className={cn(
-            "sticky top-0 h-full max-h-dvh overflow-y-auto border-gray-800/50 bg-gray-900/50",
+            "sticky top-0 h-full max-h-dvh border-gray-800/50 bg-gray-900/50",
             position === "start" ? "left-0 border-r" : "right-0 border-l",
           )}
         >
-          <div className="py-6">{children}</div>
+          <ScrollArea>
+            <div className="py-6">{children}</div>
+          </ScrollArea>
         </aside>
       </div>
     </div>
