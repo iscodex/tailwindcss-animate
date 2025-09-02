@@ -30,7 +30,7 @@
   "files": [
     "/src",
     "/README.md",
-    "/LICENSE"
+    "/LICENSE.md"
   ],
   "author": "Francisco Luis Rios Vega <alckordev@gmail.com>",
   "license": "MIT",

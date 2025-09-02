@@ -102,9 +102,11 @@ export default function Configurator() {
             ))}
           </div>
         </Sidebar>
-        <div className="relative">
+        <div className="relative p-16">
           <div className="absolute inset-0 dots-pattern opacity-70" />
-          Content
+          <div className="relative z-10">
+            <div className="animate-bounce md:animate-fade-in lg:animate-none bg-pink-500 w-10 h-10"></div>
+          </div>
         </div>
         <Sidebar position="end" className="w-90">
           <div className="mb-8 px-6">
