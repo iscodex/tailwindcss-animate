@@ -73,7 +73,7 @@ export default function Home() {
             <div className="space-y-6">
               <div className="animate-fade-in-up animate-delay-[400ms] rounded-xl border border-gray-800 bg-gray-900 p-6">
                 <div className="mb-3 flex items-center">
-                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-400 text-sm font-bold text-white">
                     1
                   </span>
                   <h3 className="font-semibold text-white">
@@ -85,7 +85,7 @@ export default function Home() {
 
               <div className="animate-fade-in-up animate-delay-[500ms] rounded-xl border border-gray-800 bg-gray-900 p-6">
                 <div className="mb-3 flex items-center">
-                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-400 text-sm font-bold text-white">
                     2
                   </span>
                   <h3 className="font-semibold text-white">
@@ -102,7 +102,7 @@ export default function Home() {
 
               <div className="animate-fade-in-up animate-delay-[600ms] rounded-xl border border-gray-800 bg-gray-900 p-6">
                 <div className="mb-3 flex items-center">
-                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-sm font-bold text-white">
+                  <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-pink-400 text-sm font-bold text-white">
                     3
                   </span>
                   <h3 className="font-semibold text-white">Start animating</h3>

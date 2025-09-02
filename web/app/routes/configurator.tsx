@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useAnimControl } from "~/hooks/use-anim-control";
 import { useMediaQuery } from "~/hooks/use-media-query";
 import { ScreenSizeBlocker } from "~/components/screen-size-blocker";
+import { useClipboard } from "~/hooks/use-clipboard";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -27,6 +28,9 @@ export default function Configurator() {
   const navigate = useNavigate();
 
   const isMobile = useMediaQuery("(width <= 64rem)");
+
+  const copyAnim = useClipboard();
+  const copyLink = useClipboard();
 
   const { key, replay } = useAnimControl();
 
@@ -87,17 +91,19 @@ export default function Configurator() {
     navigate(`?${q.toString()}`);
   }
 
-  const generatedClasses = [
-    values.animation,
-    values.count && `animate-${values.count}`,
-    values.duration && `animate-duration-${values.duration}`,
-    values.delay && `animate-delay-${values.delay}`,
-    values.ease && `animate-${values.ease}`,
-    values.direction && `animate-${values.direction}`,
-    values.fill && `animate-fill-${values.fill}`,
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const generatedClasses = (delimiter: string = "\n") => {
+    return [
+      values.animation,
+      values.count && `animate-${values.count}`,
+      values.duration && `animate-duration-${values.duration}`,
+      values.delay && `animate-delay-${values.delay}`,
+      values.ease && `animate-${values.ease}`,
+      values.direction && `animate-${values.direction}`,
+      values.fill && `animate-fill-${values.fill}`,
+    ]
+      .filter(Boolean)
+      .join(delimiter);
+  };
 
   if (isMobile) return <ScreenSizeBlocker />;
 
@@ -119,7 +125,7 @@ export default function Configurator() {
               <div key={i} className="space-y-2">
                 <div className="flex items-center justify-between space-x-4 px-4">
                   <h2 className="font-semibold">{group.name}</h2>
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-pink-500 text-xs font-medium text-white">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-pink-400 text-xs font-medium text-white">
                     {group.children.length}
                   </span>
                 </div>
@@ -189,14 +195,22 @@ export default function Configurator() {
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
               <button
                 onClick={replay}
-                className="cursor-pointer rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-600"
+                className="flex cursor-pointer items-center justify-center rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-gray-600 active:scale-95"
               >
-                Replay Animation
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="mr-2 h-3.5 w-3.5"
+                >
+                  <path d="M19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"></path>
+                </svg>
+                Replay animation
               </button>
             </div>
           </div>
         </div>
-        <Sidebar position="end" className="w-90">
+        <Sidebar position="end" className="w-100">
           <div className="mb-8 px-6">
             <h1 className="mb-2 text-lg font-semibold text-gray-200">
               Utilities
@@ -210,7 +224,7 @@ export default function Configurator() {
               <div className="flex items-center justify-between space-x-4 px-4">
                 <h2 className="font-semibold">Timing</h2>
                 <button
-                  className="text-xs font-medium text-pink-300 transition-colors hover:text-pink-500"
+                  className="cursor-pointer text-xs font-medium text-pink-400 transition-colors hover:underline"
                   onClick={handleResetAnim}
                 >
                   Reset all properties
@@ -318,21 +332,44 @@ export default function Configurator() {
           </div>
 
           <div className="p-6">
-            <BlockCode lang="css">{generatedClasses}</BlockCode>
+            <BlockCode lang="css">{generatedClasses()}</BlockCode>
             <div className="mt-4 grid grid-cols-2 space-x-4">
               <button
                 type="button"
-                className="cursor-pointer rounded-lg bg-pink-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-pink-600"
+                className="flex cursor-pointer items-center justify-center rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-gray-100 active:scale-95"
+                onClick={() => copyAnim.copy(generatedClasses(" "))}
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="mr-2 h-3.5 w-3.5"
+                >
+                  {copyAnim.copied ? (
+                    <path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z" />
+                  ) : (
+                    <path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" />
+                  )}
+                </svg>
                 Copy classes
               </button>
               <button
                 type="button"
-                onClick={() => {
-                  navigator.clipboard.writeText(window.location.href);
-                }}
-                className="cursor-pointer rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-600"
+                className="flex cursor-pointer items-center justify-center rounded-lg bg-gray-700 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-gray-600 active:scale-95"
+                onClick={() => copyLink.copy(window.location.href)}
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="mr-2 h-3.5 w-3.5"
+                >
+                  {copyLink.copied ? (
+                    <path d="M9.9997 15.1709L19.1921 5.97852L20.6063 7.39273L9.9997 17.9993L3.63574 11.6354L5.04996 10.2212L9.9997 15.1709Z" />
+                  ) : (
+                    <path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" />
+                  )}
+                </svg>
                 Copy link
               </button>
             </div>
