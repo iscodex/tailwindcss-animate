@@ -1,8 +1,8 @@
 # @iscodex/tailwindcss-animate
 
-[![NPM version](https://img.shields.io/npm/v/culqi-nodejs?color=32A9C3&labelColor=1B3C4A&label=npm)](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
-[![NPM downloads](https://img.shields.io/npm/dm/culqi-nodejs?color=32A9C3&labelColor=1B3C4A&label=downloads)](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
-[![NPM License](https://img.shields.io/npm/l/culqi-nodejs?color=32A9C3&labelColor=1B3C4A&label=license)](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
+[![NPM version](https://img.shields.io/npm/v/@iscodex/tailwindcss-animate?color=32A9C3&labelColor=1B3C4A&label=npm)](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
+[![NPM downloads](https://img.shields.io/npm/dm/@iscodex/tailwindcss-animate?color=32A9C3&labelColor=1B3C4A&label=downloads)](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
+[![NPM License](https://img.shields.io/npm/l/@iscodex/tailwindcss-animate?color=32A9C3&labelColor=1B3C4A&label=license)](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
 
 Extended animation utilities for Tailwind CSS v4. Modern, lightweight, and fully customizable animations built with CSS custom properties.
 
