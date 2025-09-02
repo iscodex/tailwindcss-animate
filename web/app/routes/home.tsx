@@ -45,7 +45,7 @@ export default function Home() {
             <div className="animate-fade-in animate-delay-[0.15s] flex flex-col sm:flex-row gap-4 justify-center">
               <NavLink
                 to="#installation"
-                className="bg-gray-200 text-gray-950 px-8 py-3 rounded-lg font-medium hover:bg-white transition-all duration-200 animate-glow"
+                className="bg-gray-200 text-gray-950 px-8 py-3 rounded-lg font-medium hover:bg-white transition-all duration-200"
               >
                 Get Started
               </NavLink>

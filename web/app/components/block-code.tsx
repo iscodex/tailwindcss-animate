@@ -13,12 +13,11 @@ interface BlockCodeProps {
 export function BlockCode({ children, lang, theme }: BlockCodeProps) {
   const [nodes, setNodes] = useState<JSX.Element | undefined>();
 
-  // const code = children.trim();
   const code = dedent(children);
 
   useLayoutEffect(() => {
     void highlight(code, lang, theme).then(setNodes);
-  }, []);
+  }, [code]);
 
   return (
     <div className="group overflow-hidden rounded-lg border border-gray-700/30 bg-gray-950/30">
@@ -29,7 +28,7 @@ export function BlockCode({ children, lang, theme }: BlockCodeProps) {
   );
 }
 
-function dedent(code: string): string {
+const dedent = (code: string): string => {
   const lines = code
     .replace(/^\n/, "")
     .replace(/\n\s*$/, "")
@@ -40,4 +39,4 @@ function dedent(code: string): string {
       .map((line) => line.match(/^(\s*)/)![0].length),
   );
   return lines.map((line) => line.slice(minIndent)).join("\n");
-}
+};
