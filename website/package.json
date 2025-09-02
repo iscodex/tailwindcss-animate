@@ -12,5 +12,9 @@
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.5",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
   }
 }
