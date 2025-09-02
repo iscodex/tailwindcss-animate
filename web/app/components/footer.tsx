@@ -44,7 +44,7 @@ export const Footer = () => {
         <div className="my-6 bg-gradient-to-r from-transparent via-gray-800/50 to-transparent h-px"></div>
 
         <div className="pt-8 text-center text-gray-500 text-sm">
-          <p>Built with Astro and Tailwind CSS</p>
+          <p>Built with Remix and Tailwind CSS</p>
         </div>
       </div>
     </footer>
