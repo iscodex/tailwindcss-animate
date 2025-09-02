@@ -1,62 +1,43 @@
----
-import { Image } from "astro:assets";
-import astro from "../assets/astro.svg";
-import tailwindcss from "../assets/tailwindcss.svg";
----
-
-<footer class="py-12 bg-slate-900 relative">
-  <div
-    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"
-  >
-  </div>
-
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <div class="flex items-center justify-between gap-6 flex-col md:flex-row">
-      <div class="flex items-center space-x-3 justify-center">
-        <div
-          class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg animate-wiggle animate-infinite"
-        >
-        </div>
-        <span class="text-white font-bold text-lg">tailwindcss-animate</span>
+<footer class="py-12 bg-slate-950 border-t border-slate-800/50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between flex-col md:flex-row gap-6">
+      <div class="flex items-center space-x-3">
+        <span class="text-slate-200 text-2xl leading-3.5">
+          <span class="text-sm font-normal opacity-50">tailwindcss</span>
+          <span class="block font-semibold">animate</span>
+        </span>
       </div>
-      <div class="flex items-center justify-center gap-4 flex-col md:flex-row">
+
+      <div class="flex items-center space-x-6">
         <a
           href="https://github.com/iscodex/tailwindcss-animate"
-          class="text-slate-400 hover:text-white transition-colors flex items-center space-x-1"
+          class="text-slate-400 hover:text-slate-200 transition-colors"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            class="w-5 h-5"
-          >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path
               d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"
             ></path>
-            <span class="inline-block md:hidden">Github</span>
           </svg>
         </a>
-        <a href="#installation" class="text-slate-400 hover:text-white transition-colors">
+        <a
+          href="#installation"
+          class="text-slate-400 hover:text-slate-200 transition-colors text-sm"
+        >
           Installation
         </a>
-        <a href="/configurator" class="text-slate-400 hover:text-white transition-colors">
+        <a
+          href="/configurator"
+          class="text-slate-400 hover:text-slate-200 transition-colors text-sm"
+        >
           Configurator
         </a>
       </div>
     </div>
 
-    <div class="h-px bg-gradient-to-r from-transparent via-slate-500/30 to-transparent my-6"></div>
+    <div class="my-6 bg-gradient-to-r from-transparent via-slate-800/50 to-transparent h-px"></div>
 
-    <div class="flex items-center justify-center space-x-3 text-slate-500">
-      <div class="flex items-center space-x-1 relative">
-        <Image src={astro} width={16} height={16} alt="Astro" class="absolute top-1 left-0" />
-        <span class="ms-5">Astro</span>
-      </div>
-      <span class="text-slate-500/30">•</span>
-      <div class="flex items-center space-x-1">
-        <Image src={tailwindcss} width={16} height={16} alt="Tailwind CSS" />
-        <span>Tailwind CSS</span>
-      </div>
+    <div class="pt-8 text-center text-slate-500 text-sm">
+      <p>Built with Astro and Tailwind CSS</p>
     </div>
   </div>
 </footer>

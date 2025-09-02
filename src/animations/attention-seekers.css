@@ -43,6 +43,10 @@
     var(--default-animation-timing-function, ease)
     var(--default-animation-delay, 0s) both;
 
+  --animate-float: float var(--default-animation-duration, 3s)
+    var(--default-animation-timing-function, ease-in-out)
+    var(--default-animation-delay, 0s) infinite;
+
   @keyframes flash {
     from,
     50%,
@@ -260,6 +264,16 @@
     }
     to {
       transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
     }
   }
 }

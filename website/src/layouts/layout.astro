@@ -1,8 +1,8 @@
 ---
+import "../globals.css";
 import { ClientRouter } from "astro:transitions";
 import Footer from "../components/footer.astro";
 import Navbar from "../components/navbar.astro";
-import "../globals.css";
 
 const {
   title = "Tailwind CSS Animate",
@@ -21,7 +21,7 @@ const {
 
     <ClientRouter />
   </head>
-  <body class="bg-slate-900 text-white min-h-screen text-sm">
+  <body class="bg-slate-950 text-white min-h-screen">
     <Navbar />
     <main>
       <slot />
