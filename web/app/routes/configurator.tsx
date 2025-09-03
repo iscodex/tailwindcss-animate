@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import type { Route } from "../+types/root";
+import type { Route } from "./+types/configurator";
 import { Navbar } from "~/components/navbar";
 import { Sidebar } from "~/components/sidebar";
 import { animates } from "~/data/animates";
@@ -13,13 +13,44 @@ import { useAnimControl } from "~/hooks/use-anim-control";
 import { useMediaQuery } from "~/hooks/use-media-query";
 import { ScreenSizeBlocker } from "~/components/screen-size-blocker";
 import { useClipboard } from "~/hooks/use-clipboard";
+import { Pattern } from "~/components/pattern";
 
 export function meta({}: Route.MetaArgs) {
+  const title = "Configurator - Tailwind CSS Animate";
+  const description =
+    "Tailwind CSS Animate Configurator: preview animations in real time, adjust their behavior, and get utility classes ready to copy into your code.";
+
   return [
-    { title: "Configurator - Tailwind CSS Animate" },
+    { title },
     {
       name: "description",
-      content: "Extended animation utilities for Tailwind CSS v4",
+      content: description,
+    },
+
+    { property: "og:title", content: title },
+    {
+      property: "og:description",
+      content: description,
+    },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:url",
+      content: "https://tailwindcss-animate.vercel.app/configurator",
+    },
+    {
+      property: "og:image",
+      content: "https://tailwindcss-animate.vercel.app/og.png",
+    },
+
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    {
+      name: "twitter:description",
+      content: description,
+    },
+    {
+      name: "twitter:image",
+      content: "https://tailwindcss-animate.vercel.app/og.png",
     },
   ];
 }
@@ -177,7 +208,7 @@ export default function Configurator() {
           </div>
         </Sidebar>
         <div className="relative flex items-center justify-center overflow-hidden p-16">
-          <div className="dots-pattern absolute inset-0 opacity-70" />
+          <Pattern hasShape={false} />
           <div className="z-10 space-y-6">
             <div
               key={key}
@@ -210,7 +241,7 @@ export default function Configurator() {
             </div>
           </div>
         </div>
-        <Sidebar position="end" className="w-100">
+        <Sidebar position="end">
           <div className="mb-8 px-6">
             <h1 className="mb-2 text-lg font-semibold text-gray-200">
               Utilities
@@ -330,10 +361,9 @@ export default function Configurator() {
               </div>
             </div>
           </div>
-
           <div className="p-6">
             <BlockCode lang="css">{generatedClasses()}</BlockCode>
-            <div className="mt-4 grid grid-cols-2 space-x-4">
+            <div className="mt-4 grid space-y-2">
               <button
                 type="button"
                 className="flex cursor-pointer items-center justify-center rounded-lg bg-white px-4 py-2 text-sm font-medium text-gray-900 shadow-sm transition hover:bg-gray-100 active:scale-95"

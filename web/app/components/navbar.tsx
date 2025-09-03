@@ -5,8 +5,13 @@ import { Logo } from "./logo";
 export const Navbar = ({ className }: { className?: string }) => {
   return (
     <nav className="fixed top-0 z-50 h-16 w-full border-b border-gray-800/50 bg-gray-900/50 backdrop-blur-sm">
-      <div className={cn("mx-auto max-w-6xl px-6 py-4", className)}>
-        <div className="flex items-center justify-between">
+      <div
+        className={cn(
+          "mx-auto flex h-16 max-w-6xl items-center px-6",
+          className,
+        )}
+      >
+        <div className="flex w-full items-center justify-between">
           <Logo />
           <div className="hidden items-center space-x-8 md:flex">
             <NavLink

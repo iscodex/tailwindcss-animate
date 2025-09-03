@@ -5,13 +5,44 @@ import { Particles } from "~/components/particles";
 import { NavLink } from "react-router";
 import { Fragment } from "react/jsx-runtime";
 import { BlockCode } from "~/components/block-code";
+import { Pattern } from "~/components/pattern";
 
 export function meta({}: Route.MetaArgs) {
+  const title = "Tailwind CSS Animate";
+  const description =
+    "Tailwind CSS Animate extends Tailwind v4 with ready-to-use animation utilities. Easily add motion, transitions, and dynamic effects to your projects with minimal effort.";
+
   return [
-    { title: "Tailwind CSS Animate" },
+    { title },
     {
       name: "description",
-      content: "Extended animation utilities for Tailwind CSS v4",
+      content: description,
+    },
+
+    { property: "og:title", content: title },
+    {
+      property: "og:description",
+      content: description,
+    },
+    { property: "og:type", content: "website" },
+    {
+      property: "og:url",
+      content: "https://tailwindcss-animate.vercel.app/configurator",
+    },
+    {
+      property: "og:image",
+      content: "https://tailwindcss-animate.vercel.app/og.png",
+    },
+
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    {
+      name: "twitter:description",
+      content: description,
+    },
+    {
+      name: "twitter:image",
+      content: "https://tailwindcss-animate.vercel.app/og.png",
     },
   ];
 }
@@ -21,9 +52,8 @@ export default function Home() {
     <Fragment>
       <Navbar />
       <main>
-        <section className="relative flex min-h-[65dvh] items-center justify-center overflow-hidden">
-          <div className="dots-pattern absolute inset-0 opacity-70"></div>
-
+        <section className="relative flex min-h-[80dvh] items-center justify-center overflow-hidden">
+          <Pattern />
           <Particles />
 
           <div className="relative mx-auto max-w-5xl px-6 text-center">
@@ -36,7 +66,7 @@ export default function Home() {
 
             <div className="animate-fade-in animate-delay-[0.1s]">
               <p className="mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-gray-400 md:text-xl">
-                Extended animation utilities for Tailwind CSS v4.
+                Extended animation utilities for Tailwind CSS v4.{" "}
                 <span className="text-gray-300">Zero configuration</span>, ready
                 to use.
               </p>
@@ -181,9 +211,9 @@ export default function Home() {
                   viewBox="0 0 24 24"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M9 5l7 7-7 7"
                   ></path>
                 </svg>
