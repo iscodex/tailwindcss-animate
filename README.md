@@ -6,6 +6,8 @@
 
 Extended animation utilities for Tailwind CSS v4. Modern, lightweight, and fully customizable animations built with CSS custom properties.
 
+<img width="1200" height="630" alt="tw-animate-og" src="https://github.com/user-attachments/assets/7f06d2ff-0167-4261-a1fd-6c10913b8dcd" />
+
 ## Features
 
 - **Tailwind CSS v4** - Built with `@utility` and `@theme` syntax
@@ -275,10 +277,9 @@ See [CHANGELOG](CHANGELOG.md) for version history.
 
 ## Links
 
-- [Documentation](https://tailwindcss-animate-docs.com) _(coming soon)_
-- [Animation Configurator](https://tailwindcss-animate.com/configurator) _(coming soon)_
+- [Documentation](https://tailwindcss-animate.vercel.app)
+- [Animation Configurator](https://tailwindcss-animate.vercel.app/configurator)
 - [GitHub Repository](https://github.com/iscodex/tailwindcss-animate)
-- [npm Package](https://www.npmjs.com/package/@iscodex/tailwindcss-animate)
 
 ---
 
