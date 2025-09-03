@@ -39,7 +39,7 @@ export function meta({}: Route.MetaArgs) {
     },
     {
       property: "og:image",
-      content: "https://tailwindcss-animate.vercel.app/og.png",
+      content: "https://tailwindcss-animate.vercel.app/og.jpg",
     },
 
     { name: "twitter:card", content: "summary_large_image" },
@@ -50,7 +50,7 @@ export function meta({}: Route.MetaArgs) {
     },
     {
       name: "twitter:image",
-      content: "https://tailwindcss-animate.vercel.app/og.png",
+      content: "https://tailwindcss-animate.vercel.app/og.jpg",
     },
   ];
 }
